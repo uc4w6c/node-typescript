@@ -3,7 +3,12 @@
       "module": "commonjs",
       "target": "es6",
       "sourceMap": true,
-      "types" : ["node"]
+      "types" : ["node"],
+      "typeRoots" :  ["types"],
+      /*"baseUrl": ".",
+      "paths": {
+        "*": ["types/*"]
+      }*/
     },
     "include": [
         "src/**/*"
