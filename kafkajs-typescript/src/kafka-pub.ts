@@ -10,7 +10,7 @@ const producer = kafka.producer();
 const sendMessage = () => {
   return producer
     .send({
-      topic: 'test-topic',
+      topic: 'test-topic1',
       messages: [
         { key: 'key1', value: 'Hello KafkaJS user 1!' },
         { key: 'key2', value: 'Hello KafkaJS user 2!' },
