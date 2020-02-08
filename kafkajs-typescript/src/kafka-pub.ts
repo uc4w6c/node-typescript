@@ -1,8 +1,8 @@
 import { Kafka } from 'kafkajs';
 
 const kafka = new Kafka({
-  clientId: 'kafka-test',
-  brokers: ['localhost:9092']
+  clientId: 'kafka-test-pub',
+  brokers: ['localhost:9092', 'localhost:9093', 'localhost:9094']
 });
 
 const producer = kafka.producer();
@@ -12,7 +12,10 @@ const sendMessage = () => {
     .send({
       topic: 'test-topic',
       messages: [
-        { value: 'Hello KafkaJS user!' },
+        { key: 'key1', value: 'Hello KafkaJS user 1!' },
+        { key: 'key2', value: 'Hello KafkaJS user 2!' },
+        // { key: 'key1', value: 'Hello KafkaJS user 1!', partition: 0 },
+        // { key: 'key2', value: 'Hello KafkaJS user 2!', partition: 1 },
       ],
     })
     .then(console.log)
