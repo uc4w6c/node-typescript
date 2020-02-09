@@ -45,5 +45,13 @@ $ kafka-topics --zookeeper zookeeper:2181 --topic test-topic --delete
 ## producer接続
 $ kafka-console-producer --topic=test --broker-list=:9092
 
+キーを指定
+--property "parse.key=true" --property "key.separator=:"
+>key1:value1
+separatorでキーとvalueをわける文字を変える
+
 ## consumer接続
 $ kafka-console-consumer --bootstrap-server=:9092 --topic=test --from-beginning
+
+ --partition 0
+ つければ取得する場所を指定可能
