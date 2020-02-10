@@ -14,10 +14,10 @@ partition数を指定
 
 
 ## topicを確認
-$ kafka-topics --zookeeper zookeeper:2181 --topic test-topic1 --alter --partitions 3
+$ kafka-topics --describe --zookeeper zookeeper:2181 --topic test-topic1
 
 ## partitionの追加
-$ kafka-topics --describe --zookeeper zookeeper:2181 --topic test-topic1
+$ kafka-topics --zookeeper zookeeper:2181 --topic test-topic1 --alter --partitions 3
 
 ### PartitionCount
 パーティションの数
@@ -50,8 +50,14 @@ $ kafka-console-producer --topic=test --broker-list=:9092
 >key1:value1
 separatorでキーとvalueをわける文字を変える
 
+sample
+
+
 ## consumer接続
 $ kafka-console-consumer --bootstrap-server=:9092 --topic=test --from-beginning
 
  --partition 0
  つければ取得する場所を指定可能
+
+sample
+$ kafka-console-consumer --bootstrap-server=localhost:9093 --topic=test-topic --from-beginning --partition 1
