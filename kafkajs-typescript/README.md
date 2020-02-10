@@ -51,8 +51,8 @@ $ kafka-console-producer --topic=test --broker-list=:9092
 separatorでキーとvalueをわける文字を変える
 
 sample
-
-
+kafka-console-producer --topic=test-topic --broker-list=kafka1:29092,kafka2:29093,kafka3:29094
+kafka-console-producer --topic=test-topic --broker-list=kafka1:29092,kafka2:29093,kafka3:29094 --property "parse.key=true" --property "key.separator=:"
 ## consumer接続
 $ kafka-console-consumer --bootstrap-server=:9092 --topic=test --from-beginning
 
