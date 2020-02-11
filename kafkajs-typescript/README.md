@@ -64,3 +64,4 @@ $ kafka-console-consumer --bootstrap-server=:9092 --topic=test --from-beginning
 
 sample
 $ kafka-console-consumer --bootstrap-server=localhost:9093 --topic=test-topic --from-beginning --partition 1
+$ kafka-console-consumer --bootstrap-server=kafka1:29092,kafka2:29093,kafka3:29094 --topic=test-topic
