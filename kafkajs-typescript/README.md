@@ -16,6 +16,9 @@ partition数を指定
 ## topicを確認
 $ kafka-topics --describe --zookeeper zookeeper:2181 --topic test-topic1
 
+## topic一覧を表示
+$ kafka-topics --list --zookeeper zookeeper:2181
+
 ## partitionの追加
 $ kafka-topics --zookeeper zookeeper:2181 --topic test-topic1 --alter --partitions 3
 
