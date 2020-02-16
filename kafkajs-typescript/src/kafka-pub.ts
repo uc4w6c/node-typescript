@@ -7,14 +7,17 @@ const kafka = new Kafka({
 
 const producer = kafka.producer();
 
+var i = 0;
 const sendMessage = () => {
+  i = i + 1
   return producer
     .send({
-      topic: 'test-topic',
+      // topic: 'test-topic',
+      topic: 'math.sum',
       messages: [
         // { key: 'key1', value: 'Hello KafkaJS user 1!' },
         // { key: 'key2', value: 'Hello KafkaJS user 2!' },
-        { key: 'key1', value: 'Hello KafkaJS user 1!', partition: 0 },
+        { key: 'key1', value: 'Hello KafkaJS user' + i + '!', partition: 0 },
         { key: 'key2', value: 'Hello KafkaJS user 2!', partition: 1 },
       ],
     })
