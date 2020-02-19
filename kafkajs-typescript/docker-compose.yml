@@ -26,6 +26,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:29092,PLAINTEXT_HOST://localhost:9092
       # KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    volumes:
+      - ./kafka-cp/consumer.properties:/etc/kafka/consumer.properties
   kafka2:
     container_name: kafkajs-typescript-test-kafka2
     hostname: kafka2
@@ -42,6 +44,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:29093,PLAINTEXT_HOST://localhost:9093
       # KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    volumes:
+      - ./kafka-cp/consumer.properties:/etc/kafka/consumer.properties
   kafka3:
     container_name: kafkajs-typescript-test-kafka3
     hostname: kafka3
@@ -58,3 +62,5 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka3:29094,PLAINTEXT_HOST://localhost:9094
       # KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    volumes:
+      - ./kafka-cp/consumer.properties:/etc/kafka/consumer.properties

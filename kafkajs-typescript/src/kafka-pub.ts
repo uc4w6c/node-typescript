@@ -13,12 +13,12 @@ const sendMessage = () => {
   return producer
     .send({
       // topic: 'test-topic',
-      topic: 'math.sum',
+      topic: 'math.sum1',
       messages: [
-        // { key: 'key1', value: 'Hello KafkaJS user 1!' },
-        // { key: 'key2', value: 'Hello KafkaJS user 2!' },
-        { key: 'key1', value: 'Hello KafkaJS user' + i + '!', partition: 0 },
-        { key: 'key2', value: 'Hello KafkaJS user 2!', partition: 1 },
+        { key: 'key1', value: 'Hello KafkaJS user 1!' },
+        { key: 'key2', value: 'Hello KafkaJS user 2!' },
+        // { key: 'key1', value: 'Hello KafkaJS user' + i + '!', partition: 0 },
+        // { key: 'key2', value: 'Hello KafkaJS user 2!', partition: 1 },
       ],
     })
     .then(console.log)
