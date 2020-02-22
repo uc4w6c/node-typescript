@@ -69,3 +69,13 @@ $ kafka-console-consumer --bootstrap-server=kafka1:29092,kafka2:29093,kafka3:290
 /etc/kafka
 consumer.properties
 auto.offset.reset=earliest
+
+## consumer group確認
+$ kafka-consumer-groups --describe --bootstrap-server kafka1:29092,kafka2:29093,kafka3:29094 --group test-group2
+
+
+
+## from begginingのメモ
+autocommitしていない状態のときに利用可能
+かつ、設定が反映されるには一定時間待つ必要がある。
+そうすることでConsumer has joinedが発生して設定が新しく反映される

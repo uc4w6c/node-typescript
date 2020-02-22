@@ -13,6 +13,7 @@ const runConsumer = async () => {
   await consumer.subscribe({ topic: 'math.sum1', fromBeginning: true });
   // await consumer.subscribe({ topic: 'math.sum' });
   await consumer.run({
+    autoCommit: false,  // autoCommitを停止中
     eachMessage: async ({ topic, partition, message }) => {
       console.log(topic);
       console.log(partition);
