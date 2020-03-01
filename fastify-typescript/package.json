@@ -1,0 +1,23 @@
+{
+  "name": "fastify-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/server.js", 
+    "serve": "gulp serve",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "fastify": "^2.12.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
+  }
+}
