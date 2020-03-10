@@ -30,11 +30,21 @@ class REST {
 
     server.register(function (instance, options, done) {
         instance.setNotFoundHandler(function (request, reply) {
-            console.log('cats not found');
+            console.log('cats not found1');
             reply
                 .code(404)
                 .type('text/plain')
-                .send('cats a custom not found');
+                .send('cats a custom not found1');
+        })
+        done()
+    }, { prefix: '/' });
+    server.register(function (instance, options, done) {
+        instance.setNotFoundHandler(function (request, reply) {
+            console.log('cats not found2');
+            reply
+                .code(404)
+                .type('text/plain')
+                .send('cats a custom not found2');
         })
         done()
     }, { prefix: '/' });
