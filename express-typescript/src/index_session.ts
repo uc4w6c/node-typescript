@@ -13,12 +13,13 @@ app.use(session({
 }));
 
 var sessionCheck = function(req, res, next) {
-  if (req.session.last_access) {
-    console.log('last_access:' + req.session.last_access);
+  if (req.session.set_session_time) {
+    console.log('set_session_time:' + req.session.set_session_time);
     next();
   } else {
-    req.session.last_access = Date.now();
-    console.log('last_access set');
+    req.session.set_session_time = Date.now();
+    console.log('set_session_time set');
+    next();
   }
 };
 app.use(sessionCheck);
