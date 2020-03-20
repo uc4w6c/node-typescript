@@ -1,4 +1,4 @@
-/*
+/**
  * mysqljs/mysqlを利用したパターン
  */
 import * as http from "http";
